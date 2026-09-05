@@ -17,15 +17,15 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-
-- name: Install system packages
-  run: |
-    sudo apt-get update
-    sudo apt-get install -y mingw-w64
-    sudo apt-get install -y \
-      gcc-aarch64-w64-mingw32 g++-aarch64-w64-mingw32 \
-      binutils-mingw-w64-cross pkg-config ninja-build p7zip-full git
-
+        
+    - name: Install system packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mingw-w64
+        sudo apt-get install -y \
+        gcc-aarch64-w64-mingw32 g++-aarch64-w64-mingw32 \
+        binutils-mingw-w64-cross pkg-config ninja-build p7zip-full git
+        
     - name: Install Python modules (meson)
       run: |
         python -m pip install --upgrade pip
